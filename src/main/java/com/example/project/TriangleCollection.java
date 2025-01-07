@@ -29,12 +29,21 @@ public class TriangleCollection {
     // PRECONDITION: numTriangles >= 2
     public TriangleCollection(int numTriangles, int startX, int startY) {
       /* IMPLEMENT ME */
+      collection = new Triangle[numTriangles];
+      for(int i = 0; i<numTriangles; i++){
+        collection[i] = new Triangle(new Point(-startX, 0), new Point(0,startY), new Point(startX-i,0)); 
+      }
     }
   
     // Calculate and return the sum of the perimeters of
     // all Triangles in the collection
     public double totalPerimeter() {
       /* IMPLEMENT ME */
+      double sum = 0.00;
+      for(int i =0; i<collection.length; i++){
+        sum += collection[i].perimeter();
+      }
+      return sum;
     }
   
     // adds increment to both the x and y coordinates of each of the
