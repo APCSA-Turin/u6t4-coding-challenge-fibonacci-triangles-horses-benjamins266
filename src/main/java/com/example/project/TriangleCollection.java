@@ -51,6 +51,12 @@ public class TriangleCollection {
     // ADD GETTER AND SETTER METHODS TO OTHER CLASSES AS NECESSARY
     public void shiftTriangles(int increment) {
       /* IMPLEMENT ME */
+      for(Triangle triangles: collection){
+        for(Point vertices: triangles.getVertices()){
+          vertices.setX(increment+vertices.getX());
+          vertices.setY(increment + vertices.getY());
+        }
+      }
     }
   
     // returns a String that contains each Triangle in the 
@@ -63,6 +69,11 @@ public class TriangleCollection {
     //  [(1, 5), (5, 12), (7, 5)]"
     public String triangleCollectionInfo() {
       /* IMPLEMENT ME */
+      String str = "";
+      for(Triangle triangle: collection){
+        str+= triangle.triangleInfo() + "\n";
+      }
+      return str;
     }
   }
   
